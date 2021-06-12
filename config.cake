@@ -277,7 +277,8 @@ elif cake.system.isLinux() or cake.system.isDarwin():
   compiler.addCppFlag('-std=c++1z')
   compiler.addCppFlag('-fcoroutines-ts')
   compiler.addCppFlag('-m64')
-
+  compiler.addCppFlag('-idirafter')
+  compiler.addCppFlag('/home/ubuntu/cppcoro/build/clang/lib/clang/10.0.0/include/')
   if lldExe:
     lldExeAbspath = configuration.abspath(lldExe)
     compiler.addModuleFlag('-fuse-ld=' + lldExeAbspath)
